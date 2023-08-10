@@ -10,7 +10,7 @@
 	<div style="padding-left: 64px;padding-top: 32px;">
 
 		<div>
-			<h3>Summarisation</h3>
+			<h2>Summarisation</h2>
 		</div>
 		<div>
 			<p>
@@ -19,12 +19,83 @@
 		</div>
 		<div>
 			<div>
-					<p>
+				<p>
+					Summarisation for <a href="summary_1966.html" target="_blank">Agreement on the Cessation of Hostilities, Protection of Civilians and Humanitarian Access, Republic of South Sudan</a>
+				</p>
+				<p>
+					Summarisation for <a href="summary_2109.html" target="_blank">Khartoum Declaration of Agreement between parties of the Conflict of South Sudan</a>
+				</p>
+				<p>
 					Summarisation for <a href="summary_2112.html" target="_blank">Revitalised Agreement on the Resolution of the Conflict in the Republic of South Sudan (R-ARCSS)</a>
-					</p>
+				</p>
 			</div>
 		</div>
+		<div>
+			<h3>Summarisation Algorithm</h3>
+		</div>
+		<div>
+			<p>
+				For a given agreement there exists a set implementation reports that follow in time from the agreement. For each agreement-report pair there exists a similarity matrix
+				with agreement provisions in rows and report sections in columns. Cells values contain the semantic similarity score for a provision-section pair.
+			</p>
+			<p>
+				For each agreement in a country, extract from each agreement-report matrix the indices of cells that contain a similarity score 
+				at or above a threshold value (0.7 in this demonstration). Also record the cell value. Translate the index values to provision and section IDs. The end
+				result is a list of provision-section pairs that are semantically similar at or above the threshold.
+			</p>
+			<p>
+				Use the provision-section pairs to create a pair of connected nodes in a graph (in the network sense). Because some provisions may be paired with more than 
+				one section, and some sections may be paired with more than one provision, disjoint subgraphs may form as provision-section pairs join together.
+				A subgraph contain a cluster of semantically related provisions and sections.
+				
+			</p>
+			<p>
+				A degree centrality algorithm is applied to all subgraphs in order to provide summarisation of the content of clusters.
+				The summary comprises the most salient provision and section of a cluster measured in terms of the number of connections to sections and provisions respectively.
+				Clusters containing a single provision-section pair are limiting cases. 			
+			</p>
+			<p>
+				Assertions:
+				<ol>
+					<li>The concepts in the most salient provision and section represent of the topic of a cluster.</li>
+					<li>The set of all cluster topics are the topics that an agreement and its following reports have in common.</li>
+				</ol>
+		
+			</p>
 
+		</div>
+
+		<div>
+			<h3>Network diagrams (messy) illustrating clusters of agreement provisions and report sections</h3>
+			<p>Agreement provisions are in pink, report sections in blue.</p>
+		</div>
+
+		<div>
+			<div>
+				<p>
+				Network diagram for Agreement on the Cessation of Hostilities, Protection of Civilians and Humanitarian Access, Republic of South Sudan.
+				</p>
+			</div>
+			<div id="network">
+				<img src="./images/network_1966.png" class="graphplot">
+			</div>
+			<div>
+				<p>
+				Network diagram for Khartoum Declaration of Agreement between parties of the Conflict of South Sudan.
+				</p>
+			</div>
+			<div id="network">
+				<img src="./images/network_2109.png" class="graphplot">
+			</div>
+			<div>
+				<p>
+				Network diagram for Revitalised Agreement on the Resolution of the Conflict in the Republic of South Sudan (R-ARCSS).
+				</p>
+			</div>
+			<div id="network">
+				<img src="./images/network_2112.png" class="graphplot">
+			</div>
+		</div>
 	</div>
 	
 	
