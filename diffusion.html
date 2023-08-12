@@ -1,0 +1,47 @@
+
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Implementation Narratives Diffusion</title>
+</head>
+
+<body>
+	<div style="padding-left: 64px;padding-top: 32px;">
+
+		<div>
+			<h2>Diffusion</h2>
+		</div>
+		<div>
+			<p>
+				Diffusion tracks topics across a time series of reports. The diagrams below are representations of a topic-report matrix
+				for  the agreement <em>Revitalised Agreement on the Resolution of the Conflict in the Republic of South Sudan (R-ARCSS)</em>.
+			</p>
+			<p>
+				The y-axis contains the <a href="./summary_2112.html" target="_blank">162 summarisation topics</a>, and the x-axis the 68 implementation reports that follow the agreement.
+				Reports are in date order. In the first diagram the cell values are:
+				<ul>
+					<li>1 coded as yellow. The report in the column does contain the topic in the row. </li>
+				</ul>
+				In the second diagram a dot represents a report containing a topic. 
+			</p>
+			<p>
+				The report at report index 7 is the <em>JMEC-1st-Qtr-2020-Report-FINAL 1</em> which contains 81 of the possible 162 topics. 
+			</p>
+		</div>
+		<div>
+			<div id="diffusion_heatmap">
+				<img src="./images/diffusion_heatmap.png" class="timelineplot">
+			</div>
+			<div id="diffusion_timeline_lines">
+				<img src="./images/diffusion_timeline_lines.png" class="timelineplot">
+			</div>
+		</div>
+	</div>
+	
+	
+</body>
+
+<link rel="stylesheet" type="text/css" href="./css/image.css" />
+
+</html>
