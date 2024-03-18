@@ -1,3 +1,3 @@
 # Agreement-Implementation Mapoping Demonstrator
 
-See [demonstrator](https://peacerep.github.io/implementation_narrative_summarisation_demo/)
+See [demonstrator](https://peacerep.github.io/agreement-report-mapping/)
