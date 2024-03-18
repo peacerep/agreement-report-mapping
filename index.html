@@ -1,108 +1,46 @@
 
 <html>
+	<head>
+		<title>Agreement-Constitution Mapping Demonstrator</title>
+	
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="minimal-ui"/>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0"/>
+		<meta name="description" content="Agreements-constitutions semantic mapping demonstrator"/>
+		<link rel="icon" href="/icons/favicon.ico" sizes="32x32">    
+		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png"/>
+		<link rel="icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32"/>
+		<link rel="icon" type="image/png" href="/icons/favicon-16x16.png" sizes="16x16"/>
+		<link rel="manifest" href="/site.webmanifest"/>
+		<meta name="theme-color" content="#ffffff"/>
+		<meta name="msapplication-config" content="none"/>
+		<meta name="theme-color" content="#ffffff"/>
+		<link rel="stylesheet" type="text/css" href="./css/project.css" />
+	</head>
+	
 
-<head>
-<meta charset="UTF-8">
-<title>Implementation Narratives Summarisation and Diffusion</title>
-</head>
-
-<body>
-	<div style="padding-left: 64px;padding-top: 32px;">
-
-		<div>
-			<h2>Summarisation and Diffusion</h2>
-		</div>
-		<div>
-			<p>
-				Summarisation finds exemplar provisions and sections to represent the topics that peace agreements and implementation reports have in common. 
-			</p>
-			<p>
-				<a href="./diffusion.html" target="_blank">Diffusion</a> tracks summarisation topics across a time series of reports.
-			</p>
-		</div>
-		<div>
-			<div>
-				<p>
-					Summarisation for <a href="summary_1966.html" target="_blank">Agreement on the Cessation of Hostilities, Protection of Civilians and Humanitarian Access, Republic of South Sudan</a>.
-				</p>
-				<p>
-					Summarisation for <a href="summary_2109.html" target="_blank">Khartoum Declaration of Agreement between parties of the Conflict of South Sudan</a>.
-				</p>
-				<p>
-					Summarisation for <a href="summary_2112.html" target="_blank">Revitalised Agreement on the Resolution of the Conflict in the Republic of South Sudan (R-ARCSS)</a>.
-				</p>
-			</div>
-		</div>
-		<div>
-			<h3>Summarisation Algorithm</h3>
-		</div>
-		<div>
-			<p>
-				For a given agreement there exists a set of implementation reports that follow in time from the agreement. For each agreement-report pair there exists a similarity matrix
-				with agreement provisions in rows and report sections in columns. Cell values contain the semantic similarity score of a provision-section pair.
-			</p>
-			<p>
-				For a given agreement, extract from each agreement-report matrix the indices of cells that contain a similarity score 
-				at or above a threshold value (0.7 in this demonstration). Also record the cell value. Translate the index values into provision and section IDs. The end
-				result is a list of provision-section pairs that are semantically similar at or above the threshold.
-			</p>
-			<p>
-				Use each provision-section pair to create a pair of connected nodes in a graph (in the network sense). Because some provisions may be paired with more than 
-				one section, and some sections may be paired with more than one provision, disjoint subgraphs may form as provision-section pairs join together.
-				A disjoint subgraph contain a cluster of semantically related provisions and sections.
-				
-			</p>
-			<p>
-				Apply a degree centrality algorithm to all subgraphs in order to provide summarisation of the content of clusters.
-				The summary comprises the most salient provision and section of a cluster measured in terms of the number of connections to sections and provisions respectively.
-			</p>
-			<p>
-				Propositions:
-				<ol>
-					<li>The content of the most salient provision and section represents the topic of a cluster.</li>
-					<li>The set of all cluster topics are the topics that an agreement and its following reports have in common.</li>
-				</ol>
+	<body">
 		
-			</p>
-
-		</div>
-
-		<div>
-			<h3>Network diagrams (messy) illustrating clusters of agreement provisions and report sections</h3>
-			<p>Agreement provisions are in pink, report sections in blue.</p>
-		</div>
-
-		<div>
-			<div>
-				<p>
-				Network diagram for <em>Agreement on the Cessation of Hostilities, Protection of Civilians and Humanitarian Access, Republic of South Sudan</em>.
-				</p>
-			</div>
-			<div id="network">
-				<img src="./images/network_1966.png" class="graphplot">
-			</div>
-			<div>
-				<p>
-				Network diagram for <em>Khartoum Declaration of Agreement between parties of the Conflict of South Sudan</em>.
-				</p>
-			</div>
-			<div id="network">
-				<img src="./images/network_2109.png" class="graphplot">
-			</div>
-			<div>
-				<p>
-				Network diagram for <em>Revitalised Agreement on the Resolution of the Conflict in the Republic of South Sudan (R-ARCSS)</em>.
-				</p>
-			</div>
-			<div id="network">
-				<img src="./images/network_2112.png" class="graphplot">
+		<div style="padding-top: 0px;">
+			<div id="header_div" class="header">
+				<table table style="table-layout:fixed;width:100%;">
+					<tr>
+						<td class="header_item_selected"><a href="./index.html">Introduction</a></td>
+						<td class="header_item"><a href="./mapping.html">Mapping</a></td>
+						<td class="header_item"><a href="./summary_2112.html">Summarisation</a></td>
+						<td class="header_item"><a href="./diffusion.html">Diffusion</a></td>
+					</tr>
+				</table>
 			</div>
 		</div>
-	</div>
-	
-	
-</body>
 
-<link rel="stylesheet" type="text/css" href="./css/image.css" />
+		<div style="padding-left: 64px;padding-top: 0px;">
+			<p>Need some text here.</p>
+		</div>
+		
+	</body>
+
 
 </html>
